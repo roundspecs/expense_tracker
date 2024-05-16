@@ -1,4 +1,4 @@
-import 'package:expense_tracker/screens/home/view/home_view.dart';
+import 'package:expense_tracker/screens/home/view/view.dart';
 import 'package:flutter/material.dart';
 
 class AppView extends MaterialApp {

@@ -1,5 +1,5 @@
 import 'package:expense_tracker/screens/home/view/main_screen.dart';
-import 'package:expense_tracker/screens/stats/views/stats_screen.dart';
+import 'package:expense_tracker/screens/stats/view/stats_screen.dart';
 import 'package:flutter/material.dart';
 
 const _pages = [
