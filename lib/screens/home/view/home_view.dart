@@ -1,8 +1,21 @@
+import 'package:expense_tracker/screens/home/view/main_screen.dart';
+import 'package:expense_tracker/screens/stats/views/stats_screen.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+const _pages = [
+  MainScreen(),
+  StatsScreen(),
+];
+
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  var selectedPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +27,8 @@ class HomeView extends StatelessWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 40,
+          onTap: (value) => setState(() => selectedPageIndex = value),
+          currentIndex: selectedPageIndex,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.receipt_long),
@@ -32,9 +47,7 @@ class HomeView extends StatelessWidget {
         child: const Icon(Icons.add),
         onPressed: () {},
       ),
-      body: const Center(
-        child: Text("Welcome to Expense Tracker"),
-      ),
+      body: _pages[selectedPageIndex],
     );
   }
 }
