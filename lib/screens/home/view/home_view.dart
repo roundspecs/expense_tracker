@@ -2,6 +2,8 @@ import 'package:expense_tracker/screens/home/view/main_screen.dart';
 import 'package:expense_tracker/screens/stats/view/stats_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../add_expense/add_expense.dart';
+
 const _pages = [
   MainScreen(),
   StatsScreen(),
@@ -45,7 +47,14 @@ class _HomeViewState extends State<HomeView> {
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddExpenseScreen(),
+            ),
+          );
+        },
       ),
       body: _pages[selectedPageIndex],
     );
